@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 700px) {
   .profile__button {
-    max-width: calc(100wv - 30px * 2);
+    max-width: calc(100vw - 30px * 2);
     margin: 0 auto;
   }
 }
