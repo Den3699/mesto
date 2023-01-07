@@ -1,0 +1,14 @@
+.popup__name {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 30px;
+  line-height: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+}

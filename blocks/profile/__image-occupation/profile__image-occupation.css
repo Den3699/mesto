@@ -1,4 +1,4 @@
-.profile__image {
+.profile__image-occupation {
   width: 100%;
   max-width: 486px;
   justify-content: space-between;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 330px) {
-  .profile__image {
+  .profile__image-occupation {
     flex-direction: column;
     justify-content: center;
   }

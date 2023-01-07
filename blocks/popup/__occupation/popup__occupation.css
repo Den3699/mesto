@@ -1,0 +1,14 @@
+.popup__occupation {
+  width: 100%;
+  margin-bottom: 61px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: black;
+}
