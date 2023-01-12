@@ -7,8 +7,7 @@
   border-right: none;
   margin-bottom: 30px;
   line-height: 17px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: black;
 }

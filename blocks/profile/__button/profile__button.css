@@ -4,8 +4,9 @@
   height: 50px;
   max-width: 150px;
   align-self: start;
-  background-color: #000;
+  background-color: transparent;
   border: 2px solid #fff;
+  border-radius: 2px;
 }
 
 .profile__button:hover {

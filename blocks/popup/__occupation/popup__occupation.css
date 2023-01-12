@@ -4,9 +4,8 @@
   font-size: 14px;
   line-height: 17px;
   font-weight: 400;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-top: none;
   border-left: none;
   border-right: none;
