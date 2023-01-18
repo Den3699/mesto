@@ -13,21 +13,24 @@
       <img
         src="./images/header-logo.svg"
         alt="Логотип Mesto Russia"
-        class="header__logo"/>
+        class="header__logo"
+      />
     </header>
     <main class="content">
       <section class="profile">
-        <div class="profile__image-occupation"><img
+        <div class="profile__image-occupation">
+          <img
             src="./images/image-2022-12-23_21_33_59.jpg"
             alt="Фотография морды кота."
-            class="profile__avatar"/>
+            class="profile__avatar"
+          />
           <div class="profile__info">
             <h1 class="profile__name">Мишутка</h1>
             <button type="button" class="profile__edit-button"></button>
             <p class="profile__occupation">Исследователь квартиры</p>
           </div>
         </div>
-        <button type="button" class="profile__button">
+        <button type="submit" class="profile__button">
           <img src="./images/add-button-plus.svg" alt="Кнопка со знаком +." />
         </button>
       </section>
@@ -36,17 +39,19 @@
           <img
             src="./images/image-2023-01-05_22_26_23.jpg"
             alt="Фото кота с игрушкой."
-            class="element__image"/>
+            class="element__image"
+          />
           <div class="element__caption-like">
-          <h2 class="element__caption">Любимая игрушка.</h2>
-          <button type="button" class="element__like"></button>
+            <h2 class="element__caption">Любимая игрушка.</h2>
+            <button type="button" class="element__like"></button>
           </div>
         </article>
         <article class="element">
           <img
             src="./images/image-2022-12-23_21_34_40.jpg"
             alt="Кот играет с когтечесткой."
-            class="element__image"/>
+            class="element__image"
+          />
           <div class="element__caption-like">
             <h2 class="element__caption">Когтечестка</h2>
             <button type="button" class="element__like"></button>
@@ -98,18 +103,27 @@
         </article>
       </section>
     </main>
-    <footer class="footer"><p class="footer__element">&copy;&nbsp;2022 Mesto Russia</p></footer>
+    <footer class="footer">
+      <p class="footer__element">&copy;&nbsp;2022 Mesto Russia</p>
+    </footer>
     <div class="popup">
       <div class="popup__container">
-        <button type class="popup__close"></button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__content">
-          <input class="popup__name" type="text" placeholder="Мишутка">
+        <button type="button" class="popup__close"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__content" name="popup__content">
+          <input
+            class="popup__input popup__input_form_name"
+            name="popup__name"
+            type="text"
+            placeholder="Мишутка"
+          />
           <input
             type="text"
-            class="popup__occupation"
-            placeholder="Исследователь квартиры">
-          <button type class="popup__save" type="submit">Сохранить</button>
+            class="popup__input popup__input_form_occupation"
+            name="popup__occupation"
+            placeholder="Исследователь квартиры"
+          />
+          <button type="submit" class="popup__save">Сохранить</button>
         </form>
       </div>
     </div>

@@ -2,7 +2,7 @@
   margin: 0 auto;
   width: 100%;
   min-height: 50px;
-  min-width: 358px;
+  max-width: 358px;
   padding: 0;
   border: none;
   border-radius: 2px;
@@ -22,7 +22,7 @@
 @media screen and (max-width: 320px) {
   .popup__save {
     min-height: 46px;
-    min-width: 238px;
+    max-width: 238px;
     font-size: 14px;
     line-height: 17px;
   }
