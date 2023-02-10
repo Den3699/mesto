@@ -5,9 +5,16 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   line-height: 17px;
-  padding-bottom: 13px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: black;
+  padding-bottom: 10px;
+}
+
+
+@media screen and (max-width: 320px) {
+  .popup__input {
+    margin-bottom: 28px;
+  }
 }
