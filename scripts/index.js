@@ -35,3 +35,36 @@ function formSubmitHandler(evt) {
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
 formElement.addEventListener('submit', formSubmitHandler);
+
+const cards = [
+  {
+    image: 'images/photo_2023-02-25_16-40-36.jpg',
+    alt: 'Молодой на когтечестке.',
+    heading: 'Карточка 1'
+  },
+  {
+    image: 'images/photo_2023-02-25_16-40-07.jpg',
+    alt: 'Стул.',
+    heading: 'Карточка 2'
+  },
+  {
+    image: 'images/photo_2023-02-25_16-39-43.jpg',
+    alt: 'Холодильник.',
+    heading: 'Карточка 3'
+  },
+  {
+    image: 'images/photo_2023-02-25_16-39-12.jpg',
+    alt: 'Вода.',
+    heading: 'Карточка 4'
+  },
+  {
+    image: 'images/photo_2023-02-25_16-38-38.jpg',
+    alt: 'Когтечестка.',
+    heading: 'Карточка 5'
+  },
+  {
+    image: 'images/photo_2023-02-25_16-37-38.jpg',
+    alt: 'Седушка.',
+    heading: 'Карточка 6'
+  }
+]
