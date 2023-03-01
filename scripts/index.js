@@ -36,7 +36,7 @@ popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
 formElement.addEventListener('submit', formSubmitHandler);
 
-const cards = [
+const elements = [
   {
     image: 'images/photo_2023-02-25_16-40-36.jpg',
     alt: 'Молодой на когтечестке.',
@@ -68,3 +68,19 @@ const cards = [
     heading: 'Карточка 6'
   }
 ]
+
+const page = document.querySelector('.elements')
+
+
+
+
+elements.forEach(function(element) {
+const Card = document.querySelector('#elementTemplate').content.cloneNode(true)
+
+const cardHeading = Card.querySelector('.element__caption')
+cardHeading.textContent = element.heading
+const cardImage = Card.querySelector('.element__image')
+cardImage.setAttribute('src', element.image)
+page.append(Card)
+
+})
