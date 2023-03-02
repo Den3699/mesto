@@ -74,13 +74,24 @@ const page = document.querySelector('.elements')
 
 
 
-elements.forEach(function(element) {
+const createCard = (element) => {
 const Card = document.querySelector('#elementTemplate').content.cloneNode(true)
 
 const cardHeading = Card.querySelector('.element__caption')
 cardHeading.textContent = element.heading
 const cardImage = Card.querySelector('.element__image')
 cardImage.setAttribute('src', element.image)
+cardImage.setAttribute('alt', element.alt)
+const deleteButton = Card.querySelector('.element__delete')
+deleteButton.addEventListener('click', handleDeleteButtonClick)
 page.append(Card)
 
-})
+}
+
+elements.forEach(createCard)
+
+function handleDeleteButtonClick(event) {
+  const button = event.target
+  const element = button.closest('.element')
+  element.remove()
+}
