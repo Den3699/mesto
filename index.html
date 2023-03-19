@@ -44,12 +44,13 @@
       <template id="elementTemplate">
 
         <article class="element">
-          <img class="element__image">
-          <button type="button" class="element__delete"></button>
+          <img class="element__image" src="#" alt="">
+
           <div class="element__caption-like">
             <h2 class="element__caption"></h2>
             <button type="button" class="element__like"></button>
           </div>
+          <button type="button" class="element__delete-icon"></button>
         </article>
 
       </template>
@@ -96,6 +97,17 @@
           placeholder="Ссылка на картинку"/>
           <button type="submit" class="popup__save">Сохранить</button>
         </form>
+      </div>
+
+
+      <div class="popup popup_type_image popup_opened">
+        <div class="popup__container popup__container_type_image">
+          <button type="button" class="popup__close"></button>
+          <figure class="opened-image">
+            <img class="opened-image__image" src="" alt="">
+            <figcaption class="opened-image__caption"></figcaption>
+          </figure>
+        </div>
       </div>
 
 
