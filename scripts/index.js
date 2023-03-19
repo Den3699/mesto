@@ -111,9 +111,10 @@ cardHeading.textContent = element.heading
 const cardImage = Card.querySelector('.element__image')
 cardImage.setAttribute('src', element.image)
 cardImage.setAttribute('alt', element.alt)
-cardImage.addEventListener('click', handlePreviewImage)
 const deleteButton = Card.querySelector('.element__delete-icon')
 deleteButton.addEventListener('click', handleDeleteButtonClick)
+
+
 
 page.append(Card)
 
@@ -126,9 +127,6 @@ function handleDeleteButtonClick(evt) {
   const element = button.closest('.element')
   element.remove()
 }
-
-
-
 
 
 
@@ -196,13 +194,16 @@ function closePopupByOverlay(evt) {
   }
 }
 
-function handlePreviewImage(popupImageElement) {
-  openPopup(popupImage);
 
-  imageElement.src = popupImageElement.link;
-  imageElement.alt =popupImageElement.name;
-  imageCaption.textContent = popupImageElement.name;
-}
+cardsList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("element__image")) {
+    imageElement.src = event.target.src;
+    imageElement.alt = event.target.alt;
+    imageCaption.textContent = event.target.alt;
+
+    openPopup(popupImage);
+  }
+});
 
 popupImageClose.addEventListener('click', () => {
   closePopup(popupImage);
