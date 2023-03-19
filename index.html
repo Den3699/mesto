@@ -30,7 +30,7 @@
             <p class="profile__occupation">Исследователь квартиры</p>
           </div>
         </div>
-        <button type="button" class="profile__button">
+        <button type="button" class="profile__add-button">
         </button>
       </section>
        <section class="elements"></section>
@@ -56,7 +56,7 @@
 
 
 
-    <div class="popup">
+    <div class="popup popup_type_edit">
       <div class="popup__container">
         <button type="button" class="popup__close"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
@@ -76,6 +76,29 @@
           <button type="submit" class="popup__save">Сохранить</button>
         </form>
       </div>
+    </div>
+
+    <div class="popup popup_type_add">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__content" name="popup__content">
+          <input
+          class="popup__input popup__input_form_place-name"
+          name="popup__place-name"
+          type="text"
+          placeholder="Название"/>
+          <input
+
+          class="popup__input popup__input_form_place-img"
+          name="popup__place-img"
+          type="url"
+          placeholder="Ссылка на картинку"/>
+          <button type="submit" class="popup__save">Сохранить</button>
+        </form>
+      </div>
+
+
     </div>
     <script src="./scripts/index.js"></script>
   </body>
