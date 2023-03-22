@@ -115,6 +115,11 @@ const deleteButton = Card.querySelector('.element__delete-icon')
 deleteButton.addEventListener('click', handleDeleteButtonClick)
 
 
+const likeButton = Card.querySelector('.element__like');
+likeButton.addEventListener('click', evt => {
+  evt.target.classList.toggle('element__like_active');
+});
+
 
 page.append(Card)
 
@@ -127,9 +132,6 @@ function handleDeleteButtonClick(evt) {
   const element = button.closest('.element')
   element.remove()
 }
-
-
-
 
 
 
