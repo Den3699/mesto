@@ -12,6 +12,7 @@
   background-repeat: no-repeat;
   background-size: 22px 22px;
   cursor: pointer;
+  transition: opacity .1s linear;
 }
 
 .profile__add-button:hover {

@@ -20,12 +20,12 @@ const popupAddClose = popupAdd.querySelector('.popup__close');
 const popupImage = document.querySelector('.popup_type_image');
 const popupImageClose = popupImage.querySelector('.popup__close');
 
-const cardsList = document.querySelector('.elements');
+// const cardsList = document.querySelector('.elements');
 
 
 
 
-
+// Открытие и закрытие попапа
 
 function openPopup(popup) {
   popup.classList.add('popup_animated');
@@ -39,6 +39,10 @@ function closePopup(popup) {
   document.removeEventListener('keydown', closePopupByEscape);
   document.removeEventListener('mouseup', closePopupByOverlay);
 }
+
+
+// Попап редактирования профиля
+
 
 popupElementOpenButton.addEventListener('click', () => {
   openPopup(popupEdit);
@@ -98,34 +102,36 @@ const elements = [
   }
 ]
 
+// Функция создания карточки
+
 const page = document.querySelector('.elements')
 
+function createCard(element) {
+const сard = document.querySelector('#elementTemplate').content.cloneNode(true)
 
-
-
-const createCard = (element) => {
-const Card = document.querySelector('#elementTemplate').content.cloneNode(true)
-
-const cardHeading = Card.querySelector('.element__caption')
+const cardHeading = сard.querySelector('.element__caption')
 cardHeading.textContent = element.heading
-const cardImage = Card.querySelector('.element__image')
-cardImage.setAttribute('src', element.image)
-cardImage.setAttribute('alt', element.alt)
-const deleteButton = Card.querySelector('.element__delete-icon')
+const cardImage = сard.querySelector('.element__image')
+cardImage.src = `${element.image}`
+cardImage.alt = element.alt
+const deleteButton = сard.querySelector('.element__delete-icon')
 deleteButton.addEventListener('click', handleDeleteButtonClick)
 
 
-const likeButton = Card.querySelector('.element__like');
+const likeButton = сard.querySelector('.element__like');
 likeButton.addEventListener('click', evt => {
   evt.target.classList.toggle('element__like_active');
 });
 
 
-page.append(Card)
+return сard
 
 }
 
-elements.forEach(createCard)
+elements.forEach((element) => {
+  const newCard = createCard(element)
+  addCard(newCard, page)
+})
 
 function handleDeleteButtonClick(evt) {
   const button = evt.target
@@ -137,7 +143,7 @@ function handleDeleteButtonClick(evt) {
 
 
 
-
+// Функция добавления карточки
 
 popupCardOpenButton.addEventListener('click', () => {
   openPopup(popupAdd);
@@ -149,16 +155,17 @@ popupAddClose.addEventListener('click', () => {
 
 });
 
-
-
-
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
 
-  addCard({
-    name: placeNameInput.value,
-    link: placeImgInput.value
-  }, cardsList, true);
+  const card = {
+    heading: placeNameInput.value,
+    image: placeImgInput.value,
+    alt: placeNameInput.value
+  }
+
+  const newCard = createCard(card)
+  addCard(newCard, page)
 
   closePopup(popupAdd);
 }
@@ -167,17 +174,15 @@ formCard.addEventListener('submit', handleCardFormSubmit);
 
 
 
-function addCard(element, cardContainer, newCard) {
-  const card = createCard(element);
-
-  if (newCard) {
-    cardContainer.prepend(card);
-  } else {
-    cardContainer.append(card);
-  }
+function addCard(element, cardContainer) {
+  cardContainer.prepend(element);
 }
 
 
+
+
+
+// Открытие попапа с картинкой
 
 const imageElement = popupImage.querySelector('.opened-image__image');
 const imageCaption = popupImage.querySelector('.opened-image__caption');
@@ -197,7 +202,7 @@ function closePopupByOverlay(evt) {
 }
 
 
-cardsList.addEventListener("click", (event) => {
+page.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__image")) {
     imageElement.src = event.target.src;
     imageElement.alt = event.target.alt;

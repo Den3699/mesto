@@ -11,6 +11,7 @@
   cursor: pointer;
   transition: opacity .1s linear;
   background-image: url(../../../images/element-card-delete.svg);
+  z-index: auto;
 }
 
 
