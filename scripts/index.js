@@ -72,33 +72,33 @@ formElement.addEventListener('submit', handlerFormSubmit);
 const elements = [
   {
     image: 'images/photo_2023-02-25_16-40-36.jpg',
-    alt: 'Молодой на когтечестке.',
-    heading: 'Карточка 1'
+    alt: 'Кот на когтечестке.',
+    heading: 'Игра'
   },
   {
     image: 'images/photo_2023-02-25_16-40-07.jpg',
-    alt: 'Стул.',
-    heading: 'Карточка 2'
+    alt: 'Кот на стуле.',
+    heading: 'Ожидание'
   },
   {
     image: 'images/photo_2023-02-25_16-39-43.jpg',
-    alt: 'Холодильник.',
-    heading: 'Карточка 3'
+    alt: 'Кот около холодильника',
+    heading: 'Контроль'
   },
   {
     image: 'images/photo_2023-02-25_16-39-12.jpg',
-    alt: 'Вода.',
-    heading: 'Карточка 4'
+    alt: 'Кот пьет из крана',
+    heading: 'Жажда'
   },
   {
     image: 'images/photo_2023-02-25_16-38-38.jpg',
-    alt: 'Когтечестка.',
-    heading: 'Карточка 5'
+    alt: 'Кот рядом с когтечесткой',
+    heading: 'Комната'
   },
   {
     image: 'images/photo_2023-02-25_16-37-38.jpg',
-    alt: 'Седушка.',
-    heading: 'Карточка 6'
+    alt: 'Кот на лежанке',
+    heading: 'Отдых'
   }
 ]
 
