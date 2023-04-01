@@ -2,7 +2,7 @@
 // const сard = document.querySelector('#elementTemplate').content.cloneNode(true);
 const popupProfile = document.querySelector('.popup');
 const popupEdit = document.querySelector('.popup_type_edit');
-const popupEditClose = popupEdit.querySelector('.popup__close');
+const popupEditClose = popupEdit.querySelector('.popup__close-button');
 const popupProfileOpenButton = document.querySelector('.profile__edit-button');
 const formProfile = popupEdit.querySelector('.popup__content');
 const nameInput = popupEdit.querySelector('.popup__input_form_name');
@@ -18,9 +18,9 @@ const cardPlaceImg = document.querySelector('.popup__place-img');
 const placeNameInput = popupAdd.querySelector('.popup__input_form_place-name');
 const placeImgInput = popupAdd.querySelector('.popup__input_form_place-img');
 const popupCardOpenButton = document.querySelector('.profile__add-button');
-const popupAddClose = popupAdd.querySelector('.popup__close');
+const popupAddClose = popupAdd.querySelector('.popup__close-button');
 const popupImage = document.querySelector('.popup_type_image');
-const popupImageClose = popupImage.querySelector('.popup__close');
+const popupImageClose = popupImage.querySelector('.popup__close-button');
 // const cardsList = document.querySelector('.elements');
 
 
@@ -198,7 +198,7 @@ function closePopupByEscape(evt) {
 
 function closePopupByOverlay(evt) {
   if (evt.target.classList.contains('popup_opened')) {
-    // const openPopup = document.querySelector('.popup_opened');
+    const openPopup = document.querySelector('.popup_opened');
     closePopup(openPopup);
   }
 }
