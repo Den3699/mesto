@@ -1,8 +1,10 @@
-const popupElement = document.querySelector('.popup');
+// const page = document.querySelector('.elements');
+// const сard = document.querySelector('#elementTemplate').content.cloneNode(true);
+const popupProfile = document.querySelector('.popup');
 const popupEdit = document.querySelector('.popup_type_edit');
 const popupEditClose = popupEdit.querySelector('.popup__close');
-const popupElementOpenButton = document.querySelector('.profile__edit-button');
-const formElement = popupEdit.querySelector('.popup__content');
+const popupProfileOpenButton = document.querySelector('.profile__edit-button');
+const formProfile = popupEdit.querySelector('.popup__content');
 const nameInput = popupEdit.querySelector('.popup__input_form_name');
 const jobInput = popupEdit.querySelector('.popup__input_form_occupation');
 const profileName = document.querySelector('.profile__name');
@@ -19,7 +21,6 @@ const popupCardOpenButton = document.querySelector('.profile__add-button');
 const popupAddClose = popupAdd.querySelector('.popup__close');
 const popupImage = document.querySelector('.popup_type_image');
 const popupImageClose = popupImage.querySelector('.popup__close');
-
 // const cardsList = document.querySelector('.elements');
 
 
@@ -30,7 +31,7 @@ const popupImageClose = popupImage.querySelector('.popup__close');
 function openPopup(popup) {
   popup.classList.add('popup_animated');
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closePopupByEscape);
+  // document.addEventListener('keydown', closePopupByEscape);
   document.addEventListener('mouseup', closePopupByOverlay);
 }
 
@@ -44,7 +45,7 @@ function closePopup(popup) {
 // Попап редактирования профиля
 
 
-popupElementOpenButton.addEventListener('click', () => {
+popupProfileOpenButton.addEventListener('click', () => {
   openPopup(popupEdit);
 
   nameInput.value = profileName.textContent;
@@ -65,12 +66,13 @@ function handlerFormSubmit(evt) {
 
 
 
-formElement.addEventListener('submit', handlerFormSubmit);
+formProfile.addEventListener('submit', handlerFormSubmit);
 
 
 
 const elements = [
   {
+
     image: 'images/photo_2023-02-25_16-40-36.jpg',
     alt: 'Кот на когтечестке.',
     heading: 'Игра'
@@ -104,11 +106,11 @@ const elements = [
 
 // Функция создания карточки
 
+
 const page = document.querySelector('.elements')
 
 function createCard(element) {
 const сard = document.querySelector('#elementTemplate').content.cloneNode(true)
-
 const cardHeading = сard.querySelector('.element__caption')
 cardHeading.textContent = element.heading
 const cardImage = сard.querySelector('.element__image')
@@ -195,11 +197,11 @@ function closePopupByEscape(evt) {
 }
 
 function closePopupByOverlay(evt) {
-  if (evt.target.classList.contains('popup_opened')) {
+  // if (evt.target.classList.contains('popup_opened')) {
     const openPopup = document.querySelector('.popup_opened');
     closePopup(openPopup);
   }
-}
+// }
 
 
 page.addEventListener("click", (event) => {
