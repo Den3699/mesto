@@ -197,11 +197,11 @@ function closePopupByEscape(evt) {
 }
 
 function closePopupByOverlay(evt) {
-  // if (evt.target.classList.contains('popup_opened')) {
-    const openPopup = document.querySelector('.popup_opened');
+  if (evt.target.classList.contains('popup_opened')) {
+    // const openPopup = document.querySelector('.popup_opened');
     closePopup(openPopup);
   }
-// }
+}
 
 
 page.addEventListener("click", (event) => {
