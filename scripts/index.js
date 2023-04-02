@@ -73,34 +73,34 @@ formProfile.addEventListener('submit', handlerFormSubmit);
 const elements = [
   {
 
-    image: 'images/photo_2023-02-25_16-40-36.jpg',
-    alt: 'Кот на когтечестке.',
-    heading: 'Игра'
+    link: 'images/photo_2023-02-25_16-40-36.jpg',
+    // alt: 'Кот на когтечестке.',
+    name: 'Игра'
   },
   {
-    image: 'images/photo_2023-02-25_16-40-07.jpg',
-    alt: 'Кот на стуле.',
-    heading: 'Ожидание'
+    link: 'images/photo_2023-02-25_16-40-07.jpg',
+    // alt: 'Кот на стуле.',
+    name: 'Ожидание'
   },
   {
-    image: 'images/photo_2023-02-25_16-39-43.jpg',
-    alt: 'Кот около холодильника',
-    heading: 'Контроль'
+    link: 'images/photo_2023-02-25_16-39-43.jpg',
+    // alt: 'Кот около холодильника',
+    name: 'Контроль'
   },
   {
-    image: 'images/photo_2023-02-25_16-39-12.jpg',
-    alt: 'Кот пьет из крана',
-    heading: 'Жажда'
+    link: 'images/photo_2023-02-25_16-39-12.jpg',
+    // alt: 'Кот пьет из крана',
+    name: 'Жажда'
   },
   {
-    image: 'images/photo_2023-02-25_16-38-38.jpg',
-    alt: 'Кот рядом с когтечесткой',
-    heading: 'Комната'
+    link: 'images/photo_2023-02-25_16-38-38.jpg',
+    // alt: 'Кот рядом с когтечесткой',
+    name: 'Комната'
   },
   {
-    image: 'images/photo_2023-02-25_16-37-38.jpg',
-    alt: 'Кот на лежанке',
-    heading: 'Отдых'
+    link: 'images/photo_2023-02-25_16-37-38.jpg',
+    // alt: 'Кот на лежанке',
+    name: 'Отдых'
   }
 ]
 
@@ -112,10 +112,10 @@ const page = document.querySelector('.elements')
 function createCard(element) {
 const сard = document.querySelector('#elementTemplate').content.cloneNode(true)
 const cardHeading = сard.querySelector('.element__caption')
-cardHeading.textContent = element.heading
+cardHeading.textContent = element.name
 const cardImage = сard.querySelector('.element__image')
-cardImage.src = `${element.image}`
-cardImage.alt = element.alt
+cardImage.src = `${element.link}`
+cardImage.name = element.name
 const deleteButton = сard.querySelector('.element__delete-icon')
 deleteButton.addEventListener('click', handleDeleteButtonClick)
 
@@ -161,14 +161,14 @@ function handleCardFormSubmit(evt) {
   evt.preventDefault();
 
   const card = {
-    heading: placeNameInput.value,
-    image: placeImgInput.value,
-    alt: placeNameInput.value
+    name: placeNameInput.value,
+    link: placeImgInput.value
+    // alt: placeNameInput.value
   }
 
   const newCard = createCard(card)
   addCard(newCard, page)
-
+  evt.target.reset();
   closePopup(popupAdd);
 }
 
@@ -207,8 +207,8 @@ function closePopupByOverlay(evt) {
 page.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__image")) {
     imageElement.src = event.target.src;
-    imageElement.alt = event.target.alt;
-    imageCaption.textContent = event.target.alt;
+    imageElement.name = event.target.name;
+    imageCaption.textContent = event.target.name;
 
     openPopup(popupImage);
   }
