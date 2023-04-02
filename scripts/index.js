@@ -1,6 +1,5 @@
-// const page = document.querySelector('.elements');
-// const сard = document.querySelector('#elementTemplate').content.cloneNode(true);
-const popupProfile = document.querySelector('.popup');
+
+const card = document.querySelector('#elementTemplate').content;
 const popupEdit = document.querySelector('.popup_type_edit');
 const popupEditClose = popupEdit.querySelector('.popup__close-button');
 const popupProfileOpenButton = document.querySelector('.profile__edit-button');
@@ -21,10 +20,13 @@ const popupCardOpenButton = document.querySelector('.profile__add-button');
 const popupAddClose = popupAdd.querySelector('.popup__close-button');
 const popupImage = document.querySelector('.popup_type_image');
 const popupImageClose = popupImage.querySelector('.popup__close-button');
-// const cardsList = document.querySelector('.elements');
 
 
 
+
+popupImage.addEventListener('mouseup', closePopupByOverlay);
+popupAdd.addEventListener('mouseup', closePopupByOverlay);
+popupEdit.addEventListener('mouseup', closePopupByOverlay);
 
 // Открытие и закрытие попапа
 
@@ -32,13 +34,13 @@ function openPopup(popup) {
   popup.classList.add('popup_animated');
   popup.classList.add('popup_opened');
   // document.addEventListener('keydown', closePopupByEscape);
-  document.addEventListener('mouseup', closePopupByOverlay);
+  // document.addEventListener('mouseup', closePopupByOverlay);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupByEscape);
-  document.removeEventListener('mouseup', closePopupByOverlay);
+  // document.removeEventListener('mouseup', closePopupByOverlay);
 }
 
 
@@ -78,23 +80,26 @@ formProfile.addEventListener('submit', handlerFormSubmit);
 const page = document.querySelector('.elements')
 
 function createCard(element) {
-const сard = document.querySelector('#elementTemplate').content.cloneNode(true)
-const cardHeading = сard.querySelector('.element__caption')
+// const сard = document.querySelector('#elementTemplate').content.cloneNode(true)
+const cardElement = card.cloneNode(true)
+const cardHeading = cardElement.querySelector('.element__caption')
 cardHeading.textContent = element.name
-const cardImage = сard.querySelector('.element__image')
+const cardImage = cardElement.querySelector('.element__image')
 cardImage.src = `${element.link}`
 cardImage.name = element.name
-const deleteButton = сard.querySelector('.element__delete-icon')
+
+
+const deleteButton = cardElement.querySelector('.element__delete-icon')
 deleteButton.addEventListener('click', handleDeleteButtonClick)
 
 
-const likeButton = сard.querySelector('.element__like');
+const likeButton = cardElement.querySelector('.element__like');
 likeButton.addEventListener('click', evt => {
   evt.target.classList.toggle('element__like_active');
 });
 
 
-return сard
+return cardElement
 
 }
 
@@ -166,8 +171,8 @@ function closePopupByEscape(evt) {
 
 function closePopupByOverlay(evt) {
   if (evt.target.classList.contains('popup_opened')) {
-    const openPopup = document.querySelector('.popup_opened');
-    closePopup(openPopup);
+    // const openPopup = document.querySelector('.popup_opened');
+    closePopup(evt.target);
   }
 }
 
