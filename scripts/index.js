@@ -22,18 +22,23 @@ const popupImage = document.querySelector('.popup_type_image');
 const popupImageClose = popupImage.querySelector('.popup__close-button');
 
 
+// Обьединяем в одну константу закрытие попапа
 
 
-popupImage.addEventListener('mouseup', closePopupByOverlay);
-popupAdd.addEventListener('mouseup', closePopupByOverlay);
-popupEdit.addEventListener('mouseup', closePopupByOverlay);
+
+
+
+
+popupImage.addEventListener('mousedown', closePopupByOverlay);
+popupAdd.addEventListener('mousedown', closePopupByOverlay);
+popupEdit.addEventListener('mousedown', closePopupByOverlay);
 
 // Открытие и закрытие попапа
 
 function openPopup(popup) {
   popup.classList.add('popup_animated');
   popup.classList.add('popup_opened');
-  // document.addEventListener('keydown', closePopupByEscape);
+  document.addEventListener('keydown', closePopupByEscape);
   // document.addEventListener('mouseup', closePopupByOverlay);
 }
 
