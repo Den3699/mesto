@@ -18,3 +18,29 @@
     margin-bottom: 28px;
   }
 }
+
+.popup__input:last-of-type {
+  margin-bottom: 0;
+}
+
+.popup__input::-webkit-input-placeholder {
+  line-height: 1.21;
+  color: #c4c4c4;
+}
+.popup__input::-moz-placeholder {
+  line-height: 1.21;
+  color: #c4c4c4;
+}
+.popup__input::-ms-input-placeholder {
+  line-height: 1.21;
+  color: #c4c4c4;
+}
+.popup__input::placeholder {
+  line-height: 1.21;
+  color: #c4c4c4;
+}
+
+.popup__input:focus {
+  border: 0;
+  outline: 2px solid rgba(0, 0, 0, .2);
+}
