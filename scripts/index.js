@@ -20,8 +20,8 @@ const popupCardOpenButton = document.querySelector('.profile__add-button');
 const popupAddClose = popupAdd.querySelector('.popup__close-button');
 const popupImage = document.querySelector('.popup_type_image');
 const popupImageClose = popupImage.querySelector('.popup__close-button');
-const formCardSubmit = document.querySelector('.popup__close-button');
-const inputList = Array.from(
+const formCardSubmit = document.querySelector('.popup-button');
+const inputListCardPopup = Array.from(
   formCard.querySelectorAll(setting.inputSelector)
 );
 
@@ -47,7 +47,7 @@ buttonCloseList.forEach(btn => {
 // Открытие и закрытие попапа
 
 function openPopup(popup) {
-  popup.classList.add('popup_animated');
+
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByEscape);
   // document.addEventListener('mouseup', closePopupByOverlay);
@@ -76,7 +76,7 @@ popupEditClose.addEventListener('click', () => {
   resetValidate(formProfile);
 });
 
-function handlerFormSubmit(evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileOccupation.textContent = jobInput.value;
@@ -87,7 +87,7 @@ function handlerFormSubmit(evt) {
 
 
 
-formProfile.addEventListener('submit', handlerFormSubmit);
+formProfile.addEventListener('submit', handleProfileFormSubmit);
 
 
 
@@ -104,8 +104,8 @@ const cardElement = card.cloneNode(true)
 const cardHeading = cardElement.querySelector('.element__caption')
 cardHeading.textContent = element.name
 const cardImage = cardElement.querySelector('.element__image')
-cardImage.src = `${element.link}`
-cardImage.name = element.name
+cardImage.src = element.link
+cardImage.alt = element.name
 
 
 const deleteButton = cardElement.querySelector('.element__delete-icon')
@@ -201,8 +201,8 @@ function closePopupByOverlay(evt) {
 page.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__image")) {
     imageElement.src = event.target.src;
-    imageElement.name = event.target.name;
-    imageCaption.textContent = event.target.name;
+    imageElement.alt = event.target.alt;
+    imageCaption.textContent =  event.target.alt;
 
     openPopup(popupImage);
   }

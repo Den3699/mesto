@@ -1,21 +1,22 @@
 const setting = {
   formSelector: ".form",
   inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__close-button",
+  submitButtonSelector: ".popup__button",
   inactiveButtonClass: "popup__close-button_disabled" ,
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__input-error_active",
+
 };
 
 const showInputError = (formElement, inputElement, configuration) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
   inputElement.classList.add(configuration.inputErrorClass);
   errorElement.textContent = inputElement.validationMessage;
   errorElement.classList.add(configuration.errorClass);
 };
 
 const hideInputError = (formElement, inputElement, configuration) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
   inputElement.classList.remove(configuration.inputErrorClass);
   errorElement.classList.remove(configuration.errorClass);
   errorElement.textContent = "";
@@ -34,23 +35,32 @@ const hasInvalidInput = (inputList) => {
     return !inputElement.validity.valid;
   });
 };
+function disableButton(button, classButton){
+  button.classList.add(classButton);
+  button.disabled = true;
+
+}
+function enableButton(button, classButton){
+  button.classList.remove(classButton);
+  button.disabled = false;
+
+}
 
 const toggleButtonState = (inputList, buttonElement, configuration) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(configuration.inactiveButtonClass);
-    buttonElement.disabled = true;
+    disableButton(buttonElement, configuration.inactiveButtonClass)
+
   } else {
-    buttonElement.classList.remove(configuration.inactiveButtonClass);
-    buttonElement.disabled = false;
+    enableButton(buttonElement, configuration.inactiveButtonClass)
   }
 };
 
-const resetValidate = (formElement) => {
+const resetValidate = (formElement, setting) => {
   formElement.reset();
 
-  const formInputsList = Array.from(formElement.querySelectorAll('.popup__input'));
+  const formInputsList = Array.from(formElement.querySelectorAll(setting.inputSelector));
   formInputsList.forEach((input) => {
-    input.classList.remove('popup__input_type_error');
+    input.classList.remove(setting.inputErrorClass);
   })
 
   const formSpansList = Array.from(formElement.querySelectorAll('.popup__input-error'));
@@ -58,6 +68,8 @@ const resetValidate = (formElement) => {
     span.textContent = ''
   })
 };
+
+
 
 const setEventListeners = (formElement, configuration) => {
   const inputList = Array.from(
