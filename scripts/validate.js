@@ -63,7 +63,7 @@ const resetValidate = (formElement, setting) => {
     input.classList.remove(setting.inputErrorClass);
   })
 
-  const formSpansList = Array.from(formElement.querySelectorAll('.popup__input-error'));
+  const formSpansList = Array.from(formElement.querySelectorAll(setting.inputSelector));
   formSpansList.forEach((span) => {
     span.textContent = ''
   })
