@@ -1,3 +1,7 @@
+import Card from './Card.js';
+
+import {elements} from './initialCards.js';
+
 const card = document.querySelector("#elementTemplate").content;
 const popupEdit = document.querySelector(".popup_type_edit");
 const popupEditClose = popupEdit.querySelector(".popup__close-button");

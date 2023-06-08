@@ -1,9 +1,6 @@
-
-
 const elements = [
   {
-
-    link: 'images/photo_2023-02-25_16-40-36.jpg',
+   link: 'images/photo_2023-02-25_16-40-36.jpg',
     // alt: 'Кот на когтечестке.',
     name: 'Игра'
   },
@@ -32,4 +29,7 @@ const elements = [
     // alt: 'Кот на лежанке',
     name: 'Отдых'
   }
-]
+];
+
+
+export {elements}
