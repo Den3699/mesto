@@ -159,7 +159,7 @@ formAddCard.addEventListener('submit', handleFormSubmitAddCard);
 popupEditProfile.addEventListener('click', closePopupByOverlay);
 popupCardAdd.addEventListener('click', closePopupByOverlay);
 popupImageBig.addEventListener('click', closePopupByOverlay);
-
+ ;
 
 
 
