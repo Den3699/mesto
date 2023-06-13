@@ -33,7 +33,11 @@
         <button type="button" class="profile__add-button">
         </button>
       </section>
-       <section class="elements"></section>
+       <section class="elements">
+        <ul class="elements__list">
+
+        </ul>
+       </section>
 
 
     </main>
@@ -41,18 +45,16 @@
       <p class="footer__element">&copy;&nbsp;2022 Mesto Russia</p>
     </footer>
 
-      <template id="elementTemplate">
-
-        <article class="element">
-          <img class="element__image" src="#" alt="">
-
-          <div class="element__caption-like">
-            <h2 class="element__caption"></h2>
-            <button type="button" class="element__like"></button>
-          </div>
-          <button type="button" class="element__delete-icon"></button>
+      <template id="card-template">
+        <li class="elements__item">
+          <article class="element">
+            <button class="element__card-delete"></button>
+            <img src=" " alt="" class="element__image">
+            <figcaption class="element__caption-like">
+              <p class="element__caption"></p><button class="element__like"></button>
+            </figcaption>
         </article>
-
+      </li>
       </template>
 
 
@@ -99,7 +101,7 @@
           type="url"
           placeholder="Ссылка на картинку" required/>
           <span class="popup__place-img-error popup__input-error"></span>
-          <button type="submit" class="popup__button popup__add-button">Сохранить</button>
+          <button id="card-submit" class="popup__button popup__button_disabled" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
@@ -115,9 +117,9 @@
       <!-- </div> -->
 
 
-    <script src ="./scripts/Card.js"></script>
+    <!-- <script src ="./scripts/Card.js"></script> -->
     <script src ="./scripts/validate.js"></script>
-    <script type="module" src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" type="module"></script>
     <!-- <script src="./scripts/initialCards.js"></script> -->
   </body>
 </html>

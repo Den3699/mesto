@@ -1,4 +1,4 @@
-const elements = [
+const initialCards = [
   {
    link: 'images/photo_2023-02-25_16-40-36.jpg',
     // alt: 'Кот на когтечестке.',
@@ -32,4 +32,4 @@ const elements = [
 ];
 
 
-export {elements}
+export default initialCards;
