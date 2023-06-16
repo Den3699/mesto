@@ -138,6 +138,7 @@ function closePopupOnEsc(evt) {
 //Слушатели
 
 popupOpenButtonElement.addEventListener("click", function () {
+  profileEditFormValidator.resetValidate()
   openPopup(popupEditProfile);
   nameInput.value = profileName.textContent;
   jobInput.value = profileOccupation.textContent;
@@ -148,9 +149,8 @@ popupCloseButtonElement.addEventListener("click", function () {
 });
 
 popupCardAddOpenButtonElement.addEventListener("click", function () {
-  cardSubmitBtn.setAttribute("disabled", true);
-  cardSubmitBtn.classList.add("popup__button_disabled");
-  formAddCard.reset();
+  
+    formAddCardValidator.resetValidate() 
   openPopup(popupCardAdd);
 });
 
