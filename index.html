@@ -30,34 +30,28 @@
             <p class="profile__occupation">Исследователь квартиры</p>
           </div>
         </div>
-        <button type="button" class="profile__add-button">
-        </button>
+        <button type="button" class="profile__add-button"></button>
       </section>
-       <section class="elements">
-        <ul class="elements__list">
-
-        </ul>
-       </section>
-
-
+      <section class="elements">
+        <ul class="elements__list"></ul>
+      </section>
     </main>
     <footer class="footer">
       <p class="footer__element">&copy;&nbsp;2022 Mesto Russia</p>
     </footer>
 
-      <template id="card-template">
-        <li class="elements__item">
-          <article class="element">
-            <button class="element__card-delete"></button>
-            <img src=" " alt="" class="element__image">
-            <figcaption class="element__caption-like">
-              <p class="element__caption"></p><button class="element__like"></button>
-            </figcaption>
+    <template id="card-template">
+      <li class="elements__item">
+        <article class="element">
+          <button class="element__card-delete"></button>
+          <img src=" " alt="" class="element__image" />
+          <figcaption class="element__caption-like">
+            <p class="element__caption"></p>
+            <button class="element__like"></button>
+          </figcaption>
         </article>
       </li>
-      </template>
-
-
+    </template>
 
     <div class="popup popup_type_edit">
       <div class="popup__container">
@@ -68,17 +62,25 @@
             class="popup__input popup__input_form_name"
             name="popup__name"
             type="text"
-            placeholder="Имя" required minlength="2" maxlength="40"
+            placeholder="Имя"
+            required
+            minlength="2"
+            maxlength="40"
           />
           <span class="popup__name-error popup__input-error"></span>
           <input
             type="text"
             class="popup__input popup__input_form_occupation"
             name="popup__occupation"
-            placeholder="О себе" required minlength="2" maxlength="200"
+            placeholder="О себе"
+            required
+            minlength="2"
+            maxlength="200"
           />
           <span class="popup__occupation-error popup__input-error"></span>
-          <button type="submit" class="popup__button popup__edit-button">Сохранить</button>
+          <button type="submit" class="popup__button popup__edit-button">
+            Сохранить
+          </button>
         </form>
       </div>
     </div>
@@ -89,37 +91,42 @@
         <h2 class="popup__title">Новое место</h2>
         <form class="form" name="form">
           <input
-          class="popup__input popup__input_form_place-name"
-          name="popup__place-name"
-          type="text"
-          placeholder="Название" required minlength="2" maxlength="30"/>
+            class="popup__input popup__input_form_place-name"
+            name="popup__place-name"
+            type="text"
+            placeholder="Название"
+            required
+            minlength="2"
+            maxlength="30"
+          />
           <span class="popup__place-name-error popup__input-error"></span>
           <input
-
-          class="popup__input popup__input_form_place-img"
-          name="popup__place-img"
-          type="url"
-          placeholder="Ссылка на картинку" required/>
+            class="popup__input popup__input_form_place-img"
+            name="popup__place-img"
+            type="url"
+            placeholder="Ссылка на картинку"
+            required
+          />
           <span class="popup__place-img-error popup__input-error"></span>
-          <button id="card-submit" class="popup__button popup__button_disabled" type="submit">Сохранить</button>
+          <button
+            id="card-submit"
+            class="popup__button popup__button_disabled"
+            type="submit"
+          >
+            Сохранить
+          </button>
         </form>
       </div>
     </div>
 
-      <div class="popup popup_type_image">
-        <!-- <div class="popup__container popup__container_type_image"> -->
-          <button type="button" class="popup__close-button"></button>
-          <figure class="opened-image">
-            <img class="opened-image__image" src="#" alt="">
-            <figcaption class="opened-image__caption"></figcaption>
-          </figure>
-        </div>
-      <!-- </div> -->
+    <div class="popup popup_type_image">
+      <button type="button" class="popup__close-button"></button>
+      <figure class="opened-image">
+        <img class="opened-image__image" src="#" alt="" />
+        <figcaption class="opened-image__caption"></figcaption>
+      </figure>
+    </div>
 
-
-    <!-- <script src ="./scripts/Card.js"></script> -->
-    <script src ="./scripts/validate.js"></script>
-    <script src="./scripts/index.js" type="module"></script>
-    <!-- <script src="./scripts/initialCards.js"></script> -->
+    <script type="module" src="./scripts/index.js" defer></script>
   </body>
 </html>
