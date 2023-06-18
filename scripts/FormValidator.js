@@ -27,7 +27,7 @@ export class FormValidator {
 
   resetValidate = () => {
     this._form.reset();
-
+    this._toggleButtonState();
     this._inputList.forEach((input) => {
       input.classList.remove(this._configuration.inputErrorClass);
       const errorElement = this._form.querySelector(

@@ -151,8 +151,7 @@ popupCloseButtonElement.addEventListener("click", function () {
 popupCardAddOpenButtonElement.addEventListener("click", function () {
   
     formAddCardValidator.resetValidate();
-    cardSubmitBtn.classList.add("popup__close-button_disabled");
-  openPopup(popupCardAdd);
+   openPopup(popupCardAdd);
 });
 
 popupCloseCardAdd.addEventListener("click", function () {
