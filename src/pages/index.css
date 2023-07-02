@@ -18,7 +18,6 @@
 
 @import url('../blocks/popup/popup.css');
 @import url('../blocks/popup/__overlay/popup__overlay.css');
-@import url('../blocks/popup/__overlay/_image/popup__overlay_image.css');
 @import url('../blocks/popup/__button-submit/popup__button-submit.css');
 @import url('../blocks/popup/__button-submit/__button-submit_disabled/popup__button-submit_disabled.css');
 @import url('../blocks/popup/__button-close/popup__button-close.css');
