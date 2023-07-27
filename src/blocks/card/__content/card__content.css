@@ -1,0 +1,6 @@
+.card__content{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 21px 0 31px 0;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Место</title>
+</head>
+<body class="main-container">
+<div class="wrapper">
+	<div class="page">
+		<header class="header"> <!-- шапка сайта -->
+			<a target="_self" href="#">
+				<img class="header__logo" src="<%=require('./images/header/header__logo.svg')%>"
+				     alt="Логотип Mesto">
+			</a>
+		</header>
+		<main class="content">
+			<section class="profile">
+				<div class="profile__content">
+					<img class="profile__avatar"
+					     src="<%=require('./images/profile/profileImage.jpg')%>"
+					     alt="Жак-Ив Кусто" >
+					<div class="profile__info">
+						<div class="profile__edit">
+							<h1 class="profile__title">Жак-Ив Кусто</h1>
+							<p class="profile__profession">Исследователь океана</p>
+						</div>
+						<button class="profile__button-edit"
+						        type="button"></button>
+					</div>
+				</div>
+				<button class="profile__button-add" type="button"></button>
+			</section>
+			<section class="cards-grid">
+				<template class="cards-grid-template">
+					<article class="card">
+						<button class="card__delete-button"></button>
+						<img class="card__image"
+						     src="#"
+						     alt="">
+						<div class="card__content">
+							<h2 class="card__title"></h2>
+							<button class="card__like" type="button"
+							        aria-label="Оценить"></button>
+						</div>
+					</article>
+				</template>
+			</section>
+		</main>
+		<footer class="footer">
+			<p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+		</footer>
+	</div>
+</div>
+<section class="popup popup-type-edit">
+	<div class="popup__container">
+		<button class="popup__button-close" type="button"
+		        aria-label="Закрыть"></button>
+		<h2 class="popup__title">Редактировать профиль</h2>
+		<form class="form" name="editPopupForm" novalidate>
+			<fieldset class="form__set">
+				<label class="form__field" for="name-input">
+					<input required autofocus tabindex="1" id="name-input" class="form__input form__input_type_name form__input_type_error"
+					       minlength="2" maxlength="40" type="text"  value=""
+					       name="name" placeholder="Имя">
+					<span class="name-input-error form__input-error form__input-error_active"></span>
+				</label>
+				<label class="form__field" for="prof-input">
+					<input required tabindex="2" id="prof-input" class="form__input form__input_type_prof form__input_type_error"
+					       minlength="2" maxlength="200" type="text" value=""
+					       name="profession" placeholder="Профессия">
+					<span class="prof-input-error form__input-error form__input-error_active"></span>
+				</label>
+				<button tabindex="3"
+				        class="form__submit popup__button-submit popup__button-edit"
+				        type="submit">Сохранить
+				</button>
+			</fieldset>
+		</form>
+	</div>
+</section>
+<section class="popup popup-type-add-card">
+	<div class="popup__container">
+		<button class="popup__button-close" type="button"
+		        aria-label="Закрыть"></button>
+		<h2 class="popup__title">Новое место</h2>
+		<form class="form" name="addPopupForm" novalidate>
+			<fieldset class="form__set">
+				<label class="form__field" for="place-input">
+					<input id="place-input" name="place" required autofocus
+					       class="form__input form__input_type_place"
+					       type="text" value=""
+					       minlength="2" maxlength="30"
+					       placeholder="Название">
+					<span class="place-input-error form__input-error form__input-error_active"></span>
+				</label>
+				<label class="form__field" for="link-input">
+					<input id="link-input" required
+					       class="form__input form__input_type_link"
+					       type="url" value="" name="link"
+					       placeholder="Ссылка на картинку">
+					<span class="link-input-error form__input-error form__input-error_active"></span>
+				</label>
+				<button class="form__submit popup__submit popup__button-submit popup__button-add popup__button-submit_disabled" disabled
+				        type="submit">Создать
+				</button>
+			</fieldset>
+		</form>
+	</div>
+</section>
+<section class="popup popup-type-image">
+	<div class="popup__preview">
+		<button class="popup__button-close popup-type-image__button-close"
+		        type="button" aria-label="Закрыть"></button>
+		<figure class="popup__figure">
+			<img class="popup__image"
+			     src="#"
+			     alt="Название - ">
+			<figcaption class="popup__image-caption"></figcaption>
+		</figure>
+	</div>
+ </section>
+</body>
+</html>
